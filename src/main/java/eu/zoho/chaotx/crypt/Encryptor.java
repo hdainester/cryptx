@@ -4,9 +4,11 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 /**
- * <p>The Encryptor class provides methods for en- and
+ * The Encryptor class provides methods for en- and
  * decrypting messages aswell as generating random <i>tokens</i>
- * dependent on a predefined key.</p>
+ * dependent on a predefined key.
+ * 
+ * @author HDainester
  */
 public class Encryptor {
     public static final int RANDOM_SEED_LENGTH = 128;

@@ -4,6 +4,8 @@ package eu.zoho.chaotx.crypt;
  * Functional Interface to dynamically implement
  * encryption algorithms for sequences of chars
  * (e.g. Strings).
+ * 
+ * @author HDainester
  */
 public interface EncryptFunction {
     /**
