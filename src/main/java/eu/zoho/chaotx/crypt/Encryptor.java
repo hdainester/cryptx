@@ -3,6 +3,11 @@ package eu.zoho.chaotx.crypt;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+/**
+ * <p>The Encryptor class provides methods for en- and
+ * decrypting messages aswell as generating random <i>tokens</i>
+ * dependent on a predefined key.</p>
+ */
 public class Encryptor {
     public static final int RANDOM_SEED_LENGTH = 128;
 
@@ -13,7 +18,7 @@ public class Encryptor {
      * Constructs an Encryptor with the passed String
      * as seed.
      * 
-     * @param seed
+     * @param seed string used as seed
      */
     public Encryptor(String seed) {
         this.seed = seed;
@@ -32,7 +37,7 @@ public class Encryptor {
     /**
      * Sets seed used for generation of random tokens.
      * 
-     * @param seed
+     * @param seed string used as seed
      */
     public void setSeed(String seed) {
         this.seed = seed;
@@ -50,7 +55,7 @@ public class Encryptor {
     /**
      * Sets alphabet used for generation of random tokens.
      * 
-     * @param alphabet
+     * @param alphabet array holding character set
      */
     public void setAlphabet(int[] alphabet) {
         this.alphabet = alphabet;
@@ -156,7 +161,7 @@ public class Encryptor {
      * @param k key
      * @param f conversion function
      * @return en-/decrypted message
-     * @throws IllegalArgumenException if length of message {@code m}
+     * @throws IllegalArgumentException if length of message {@code m}
      *  	is smaller than the length of key {@code k}
      * 
      * @see EncryptFunction
