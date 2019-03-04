@@ -1,5 +1,7 @@
 package eu.zoho.chaotx.crypt;
 
+import java.io.Serializable;
+
 /**
  * Functional Interface to dynamically implement
  * encryption algorithms for sequences of chars
@@ -7,7 +9,7 @@ package eu.zoho.chaotx.crypt;
  * 
  * @author HDainester
  */
-public interface EncryptFunction {
+public interface EncryptFunction extends Serializable {
     /**
      * Takes the given given char-codes {@code m} and
      * {@code k}, who represent chars of a String

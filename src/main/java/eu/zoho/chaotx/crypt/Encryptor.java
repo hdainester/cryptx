@@ -1,5 +1,6 @@
 package eu.zoho.chaotx.crypt;
 
+import java.io.Serializable;
 import java.util.Random;
 import java.util.stream.IntStream;
 
@@ -10,7 +11,8 @@ import java.util.stream.IntStream;
  * 
  * @author HDainester
  */
-public class Encryptor {
+public class Encryptor implements Serializable {
+    public static final long serialVersionUID = 1;
     public static final int RANDOM_SEED_LENGTH = 128;
 
     private int[] alphabet;
@@ -131,10 +133,10 @@ public class Encryptor {
             a_max = Integer.MAX_VALUE;
         } else {
             a_min = alphabet[0];
-            a_max = alphabet[alphabet.length-1];
+            a_max = alphabet[alphabet.length-1]+1;
         }
 
-        return rng.ints(a_min, a_max+1)
+        return rng.ints(a_min, a_max)
             .filter(i -> alphabet != null ? IntStream.of(alphabet).anyMatch(v -> v == i) : true)
             .limit(length).mapToObj(i -> new String(String.valueOf((char)i)))
             .reduce("", (a, b) -> a+b);
